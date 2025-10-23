@@ -119,10 +119,11 @@ body {
 
 /* =================== Note Card =================== */
 .inside-div {
+  position:relative;
   width: 300px;
   height: 300px;
   border-radius: 5px;
-  overflow: auto;
+  overflow: hidden;
   box-shadow: 0 0 5px rgb(78, 43, 43);
   background-color: #fff;
   display: flex;
@@ -131,6 +132,7 @@ body {
 
 /* =================== Toolbar =================== */
 .tool-bar {
+  position:absolute;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -249,3 +251,4 @@ body {
     align-items: center;
   }
 }
+
