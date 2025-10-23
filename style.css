@@ -17,7 +17,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  overflow: hidden;
+  /* overflow: hidden */
+  overflow-y: auto;
 }
 
 /* =================== Heading =================== */
@@ -430,6 +431,7 @@ body {
     height: 300px;
   }
 }
+
 
 
 
