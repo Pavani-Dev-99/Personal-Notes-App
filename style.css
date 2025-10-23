@@ -96,11 +96,6 @@
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #d4a37378;
-
-  position: sticky; /* add this */
-  top: 15vh; /* height of your header */
-  z-index: 1; /* to stay above notes */
-  
 }
 
 
@@ -437,6 +432,7 @@ body {
     height: 300px;
   }
 }
+
 
 
 
