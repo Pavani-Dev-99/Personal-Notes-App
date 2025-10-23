@@ -10,9 +10,6 @@
   box-sizing: border-box;
 }
 
-body{
-  overflow-y: auto;
-}
 /* =================== Container =================== */
 .container {
   width: 100%;
@@ -434,6 +431,7 @@ body {
     height: 300px;
   }
 }
+
 
 
 
