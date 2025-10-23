@@ -1,54 +1,43 @@
 /* =================== Color Palette ===================
-#ffadad #ffd6a5 #fdffb6 #caffbf #9bf6ff 
-#a0c4ff #bdb2ff #ffc6ff #fffffc 
+#ffadad #ffd6a5 #fdffb6 #caffbf #9bf6ff
+#a0c4ff #bdb2ff #ffc6ff #fffffc
 ====================================================== */
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins';
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-
+/* =================== Body =================== */
 body {
   margin: 0;
-  display: block; /* remove flex and height: 100vh */
+  display: block; /* normal flow */
+  background-color: #f5f5f5;
   transition: 0.4s;
 }
-
-/* .container {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .notes-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%; */
-  /* remove fixed height */
-  /* overflow-y: auto;
-  padding: 0 30px;
-  margin-bottom: 20px; /* optional spacing at bottom */
-/* } */ 
-
-
-
 
 /* =================== Container =================== */
 .container {
   width: 100%;
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* overflow: hidden */
-  /* overflow-y: auto; */
 }
 
-/* =================== Heading =================== */
+/* =================== Header =================== */
+.heading-and-button {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #d4a37378;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+}
+
 .container h1 {
   display: flex;
   align-items: center;
@@ -64,72 +53,55 @@ body {
 }
 
 /* =================== Button =================== */
-.container button i {
-  width: 25px;
-}
-
 .container button {
   display: flex;
   align-items: center;
   background-color: #c58b50;
   color: #fff;
   font-size: 18px;
-  outline: 0;
   border: 0;
   border-radius: 40px;
   padding: 15px 25px;
   cursor: pointer;
+  transition: 0.4s ease;
 }
 
 .container button:hover {
   background-color: #a06b37;
-  transition: 0.4s ease;
 }
 
-/* =================== Header Section =================== */
-.heading-and-button {
-  background-color: #d4a37378;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 15vh;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  padding-right: 20px;
+.container button i {
+  width: 25px;
 }
 
 /* =================== Mode Toggle =================== */
 .mode-and-button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
 }
 
 .mode {
-  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 200px;
 }
 
 /* =================== Color Palette =================== */
 .color-container {
-  height: 50px;
-  background-color: rgb(61, 61, 64);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 0;
+  background-color: rgb(61, 61, 64);
   border-bottom: 1px solid #d4a37378;
 }
-
 
 .color-container > * {
   height: 30px;
   width: 30px;
-  margin: 10px;
+  margin: 0 10px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -138,76 +110,56 @@ body {
 .notes-container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  /* height: 70vh; */
-  /* overflow-y: auto; */
-  scrollbar-width: none;
-  padding: 0 30px;
-   margin-bottom: 20px;
+  padding: 20px;
+  gap: 15px;
 }
-
-
 
 /* =================== Note Card =================== */
 .inside-div {
   width: 300px;
   height: 300px;
   border-radius: 5px;
-  margin: 10px;
   overflow: auto;
-  scrollbar-width: none;
-  box-shadow: 0 0 5px rgb(78, 43, 43);
+  box-shadow: 0 0 5px rgba(78, 43, 43, 0.5);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 /* =================== Toolbar =================== */
 .tool-bar {
-  width: 100%;
-  height: 8%;
-  border-radius: 5px 5px 0 0;
-  border-bottom: 1px solid rgb(214, 142, 142);
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: end;
+  padding: 5px;
+  border-bottom: 1px solid #d68e8e;
   position: sticky;
   top: 0;
-  left: 0;
+  background: #fff;
+  z-index: 5;
 }
 
 .tool-bar i {
+  margin: 0 5px;
   color: #ac3b3d;
-  margin: 5px;
-}
-
-.tool-bar i:hover {
   cursor: pointer;
 }
 
 /* =================== Note Text =================== */
 .inside-div p {
+  flex: 1;
+  padding: 5px;
   outline: none;
   color: rgb(31, 31, 31);
-  padding: 5px;
-  width: 100%;
-  height: 92%;
 }
-
-/* =================== Body =================== */
-/* body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  align-items: center;
-  transition: 0.4s;
-} */
 
 /* =================== Dark Mode Switch =================== */
 .input {
-  visibility: hidden;
+  display: none;
 }
 
 .label {
-  position: absolute;
+  position: relative;
   width: 80px;
   height: 40px;
   background-color: #c58b50;
@@ -218,260 +170,71 @@ body {
 .circle {
   width: 34px;
   height: 34px;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   border-radius: 50%;
-  top: 3px;
   position: absolute;
+  top: 3px;
   left: 3px;
-  animation: toggleOff 0.4s linear forwards;
+  transition: 0.4s;
 }
 
 .input:checked + .label {
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 
-.input:checked + label .circle {
-  animation: toggleOn 0.4s linear forwards;
+.input:checked + .label .circle {
+  transform: translateX(40px);
   background-color: #996735;
 }
 
-/* =================== Animations =================== */
-@keyframes toggleOn {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(40px);
-  }
-}
-
-@keyframes toggleOff {
-  0% {
-    transform: translateX(40px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-/* =================== Responsive Design =================== */
-@media (max-width: 768px) {
-  .heading-and-button {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .container h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-
-  .container h1 img {
-    width: 45px;
-    margin: 0 10px 0 0;
-  }
-
-  .mode-and-button {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .color-container {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 10px;
-  }
-
-  .color-container > * {
-    height: 25px;
-    width: 25px;
-    margin: 5px;
-  }
-
-  .notes-container {
-    justify-content: center;
-    height: auto;
-    padding: 10px;
-  }
-
-  .inside-div {
-    width: 90%;
-    height: 250px;
-  }
-
-  .container button {
-    font-size: 16px;
-    padding: 12px 20px;
-  }
-}
-
-/* @media (max-width: 480px) {
-  .container h1 {
-    font-size: 22px;
-  }
-
-  .inside-div {
-    width: 95%;
-    height: 220px;
-  }
-
-  .tool-bar i {
-    font-size: 16px;
-  }
-
-  .label {
-    width: 60px;
-    height: 30px;
-  }
-
-  .circle {
-    width: 26px;
-    height: 26px;
-  }
-} */
-
-/* @media (max-width: 480px) {
-  .container h1 {
-    font-size: 22px;
-    text-align: center;
-  }
-
-  .container h1 img {
-    width: 35px;
-    margin: 0 10px;
-  }
-
-  .heading-and-button {
-    flex-direction: column;
-    height: auto;
-    padding: 8px;
-  }
-
-  .container button {
-    font-size: 14px;
-    padding: 10px 18px;
-  }
-
-  .mode {
-    width: 150px;
-  }
-
-  .color-container {
-    height: 40px;
-    flex-wrap: wrap;
-  }
-
-  .color-container > * {
-    height: 25px;
-    width: 25px;
-    margin: 5px;
-  }
-
-  .notes-container {
-    height: auto;
-    padding: 10px;
-  }
-
-  .inside-div {
-    width: 200px;
-    height: 200px;
-  }
-
-  .tool-bar i {
-    font-size: 14px;
-  }
-
-  .label {
-    width: 60px;
-    height: 30px;
-  }
-
-  .circle {
-    width: 24px;
-    height: 24px;
-  }
-} */
-
-
-
-
-@media (max-width: 480px) {
-  .heading-and-button {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 0.8rem;
-  }
-
-  .container button {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .notes-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .inside-div {
-    width: 90%;
-    height: auto;
-  }
-
-  .color-container > * {
-    height: 25px;
-    width: 25px;
-  }
-
-  .label {
-    width: 60px;
-    height: 30px;
-  }
-
-  .circle {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-/* Tablets (481px–768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .heading-and-button {
-    padding: 1rem;
-  }
-
+/* =================== Responsive =================== */
+@media (max-width: 1024px) {
   .inside-div {
     width: 45%;
     height: auto;
   }
 }
 
-/* Medium Laptops (769px–1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 768px) {
+  .heading-and-button {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+  .container h1 {
+    font-size: 28px;
+  }
+  .container h1 img {
+    width: 45px;
+    margin: 0 10px 10px 0;
+  }
   .inside-div {
-    width: 30%;
+    width: 90%;
     height: auto;
   }
-}
-
-/* Large Screens (≥1025px) */
-@media (min-width: 1025px) {
-  .inside-div {
-    width: 300px;
-    height: 300px;
+  .color-container {
+    flex-wrap: wrap;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 22px;
+  }
+  .inside-div {
+    width: 95%;
+    height: auto;
+  }
+  .label {
+    width: 60px;
+    height: 30px;
+  }
+  .circle {
+    width: 24px;
+    height: 24px;
+  }
+  .notes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
