@@ -1,19 +1,19 @@
-/* =================== Color Palette ===================
-#ffadad #ffd6a5 #fdffb6 #caffbf #9bf6ff
-#a0c4ff #bdb2ff #ffc6ff #fffffc
+/* =================== Color Palette =================== 
+#ffadad #ffd6a5 #fdffb6 #caffbf #9bf6ff 
+#a0c4ff #bdb2ff #ffc6ff #fffffc 
 ====================================================== */
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 /* =================== Body =================== */
 body {
   margin: 0;
-  display: block; /* normal flow */
+  display: block;
   background-color: #f5f5f5;
   transition: 0.4s;
 }
@@ -94,7 +94,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 10px 0;
-  background-color: rgb(61, 61, 64);
+  background-color: rgb(32, 32, 33);
   border-bottom: 1px solid #d4a37378;
 }
 
@@ -110,8 +110,11 @@ body {
 .notes-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
   gap: 15px;
+  padding: 20px;
+  width: 100%;
+  overflow-y: auto;
+  max-height: calc(100vh - 15vh - 50px); /* header + color container */
 }
 
 /* =================== Note Card =================== */
@@ -120,7 +123,7 @@ body {
   height: 300px;
   border-radius: 5px;
   overflow: auto;
-  box-shadow: 0 0 5px rgba(78, 43, 43, 0.5);
+  box-shadow: 0 0 5px rgb(78, 43, 43);
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -132,7 +135,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding: 5px;
-  border-bottom: 1px solid #d68e8e;
+  border-bottom: 1px solid rgb(214, 142, 142);
   position: sticky;
   top: 0;
   background: #fff;
@@ -201,17 +204,21 @@ body {
     text-align: center;
     padding: 10px;
   }
+
   .container h1 {
     font-size: 28px;
   }
+
   .container h1 img {
     width: 45px;
     margin: 0 10px 10px 0;
   }
+
   .inside-div {
     width: 90%;
     height: auto;
   }
+
   .color-container {
     flex-wrap: wrap;
   }
@@ -221,18 +228,22 @@ body {
   .container h1 {
     font-size: 22px;
   }
+
   .inside-div {
     width: 95%;
     height: auto;
   }
+
   .label {
     width: 60px;
     height: 30px;
   }
+
   .circle {
     width: 24px;
     height: 24px;
   }
+
   .notes-container {
     flex-direction: column;
     align-items: center;
