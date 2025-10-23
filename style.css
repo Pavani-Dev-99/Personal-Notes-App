@@ -1,239 +1,371 @@
+/* =================== Color Palette ===================
+#ffadad #ffd6a5 #fdffb6 #caffbf #9bf6ff 
+#a0c4ff #bdb2ff #ffc6ff #fffffc 
+====================================================== */
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  align-items: flex-start;
-  transition: 0.4s;
-  background-color: white;
-}
-
-/* Container */
+/* =================== Container =================== */
 .container {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   overflow: hidden;
 }
 
-/* Header */
+/* =================== Heading =================== */
+.container h1 {
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+  font-weight: 600;
+  color: #aa631d;
+  text-decoration: underline;
+}
+
+.container h1 img {
+  width: 60px;
+  margin: 0 15px;
+}
+
+/* =================== Button =================== */
+.container button i {
+  width: 25px;
+}
+
+.container button {
+  display: flex;
+  align-items: center;
+  background-color: #c58b50;
+  color: #fff;
+  font-size: 18px;
+  outline: 0;
+  border: 0;
+  border-radius: 40px;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #a06b37;
+  transition: 0.4s ease;
+}
+
+/* =================== Header Section =================== */
 .heading-and-button {
   background-color: #d4a37378;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 10px 20px;
+  height: 15vh;
   position: sticky;
   top: 0;
-  z-index: 10;
-  flex-wrap: wrap;
+  left: 0;
+  z-index: 1;
+  padding-right: 20px;
 }
 
-.heading-and-button h1 {
-  display: flex;
-  align-items: center;
-  font-size: 28px;
-  font-weight: 600;
-  color: #aa631d;
-  text-decoration: underline;
-}
-
-.heading-and-button h1 img {
-  width: 40px;
-  margin-right: 10px;
-}
-
-/* Button */
-.heading-and-button button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #c58b50;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 40px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.heading-and-button button:hover {
-  background-color: #a06b37;
-  transition: 0.4s ease;
-}
-
-/* Mode toggle */
+/* =================== Mode Toggle =================== */
 .mode-and-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 }
 
 .mode {
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
-.input {
-  visibility: hidden;
-}
-
-.label {
-  width: 60px;
-  height: 30px;
-  background-color: #c58b50;
-  border-radius: 20px;
-  cursor: pointer;
-  position: relative;
-}
-
-.circle {
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  transition: 0.3s;
-}
-
-.input:checked + .label {
-  background-color: #fff;
-}
-
-.input:checked + label .circle {
-  transform: translateX(30px);
-  background-color: #996735;
-}
-
-/* Color palette */
+/* =================== Color Palette =================== */
 .color-container {
-  height: auto;
+  height: 50px;
   background-color: rgb(32, 32, 33);
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  padding: 10px;
-  gap: 10px;
+  border-bottom: 1px solid #d4a37378;
 }
 
 .color-container > * {
   height: 30px;
   width: 30px;
+  margin: 10px;
   border-radius: 50%;
   cursor: pointer;
 }
 
-/* Notes section */
+/* =================== Notes Container =================== */
 .notes-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  padding: 15px;
-  gap: 15px;
+  width: 100%;
+  height: 70vh;
   overflow-y: auto;
   scrollbar-width: none;
+  padding: 0 30px;
 }
 
-/* Note card */
+/* =================== Note Card =================== */
 .inside-div {
-  width: 90%;
-  max-width: 320px;
-  height: 260px;
+  width: 300px;
+  height: 300px;
   border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
+  margin: 10px;
+  overflow: auto;
+  scrollbar-width: none;
+  box-shadow: 0 0 5px rgb(78, 43, 43);
 }
 
+/* =================== Toolbar =================== */
 .tool-bar {
   width: 100%;
-  height: 35px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  height: 8%;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid rgb(214, 142, 142);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 10px;
-  background-color: #eee;
+  justify-content: end;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .tool-bar i {
   color: #ac3b3d;
-  margin-left: 10px;
-  cursor: pointer;
+  margin: 5px;
 }
 
 .tool-bar i:hover {
-  opacity: 0.7;
+  cursor: pointer;
 }
 
+/* =================== Note Text =================== */
 .inside-div p {
   outline: none;
-  color: #1f1f1f;
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  scrollbar-width: none;
-  background-color: transparent;
+  color: rgb(31, 31, 31);
+  padding: 5px;
+  width: 100%;
+  height: 92%;
 }
 
-/* Mobile responsiveness */
+/* =================== Body =================== */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  transition: 0.4s;
+}
+
+/* =================== Dark Mode Switch =================== */
+.input {
+  visibility: hidden;
+}
+
+.label {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background-color: #c58b50;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.circle {
+  width: 34px;
+  height: 34px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  top: 3px;
+  position: absolute;
+  left: 3px;
+  animation: toggleOff 0.4s linear forwards;
+}
+
+.input:checked + .label {
+  background-color: rgb(255, 255, 255);
+}
+
+.input:checked + label .circle {
+  animation: toggleOn 0.4s linear forwards;
+  background-color: #996735;
+}
+
+/* =================== Animations =================== */
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* =================== Responsive Design =================== */
 @media (max-width: 768px) {
   .heading-and-button {
     flex-direction: column;
     height: auto;
+    padding: 10px;
     text-align: center;
   }
 
-  .mode-and-button {
-    margin-top: 10px;
+  .container h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
   }
 
-  .heading-and-button h1 {
-    font-size: 24px;
+  .container h1 img {
+    width: 45px;
+    margin: 0 10px 0 0;
+  }
+
+  .mode-and-button {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .color-container {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
+  .color-container > * {
+    height: 25px;
+    width: 25px;
+    margin: 5px;
   }
 
   .notes-container {
+    justify-content: center;
+    height: auto;
     padding: 10px;
   }
 
   .inside-div {
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    height: 250px;
   }
 
-  .color-container {
-    padding: 8px;
-    gap: 8px;
+  .container button {
+    font-size: 16px;
+    padding: 12px 20px;
   }
 }
 
-@media (max-width: 480px) {
-  .heading-and-button h1 img {
-    width: 30px;
+/* @media (max-width: 480px) {
+  .container h1 {
+    font-size: 22px;
   }
 
-  .heading-and-button button {
-    padding: 8px 16px;
-    font-size: 14px;
+  .inside-div {
+    width: 95%;
+    height: 220px;
+  }
+
+  .tool-bar i {
+    font-size: 16px;
+  }
+
+  .label {
+    width: 60px;
+    height: 30px;
   }
 
   .circle {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
+  }
+} */
+
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .container h1 img {
+    width: 35px;
+    margin: 0 10px;
+  }
+
+  .heading-and-button {
+    flex-direction: column;
+    height: auto;
+    padding: 8px;
+  }
+
+  .container button {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .mode {
+    width: 150px;
+  }
+
+  .color-container {
+    height: 40px;
+    flex-wrap: wrap;
+  }
+
+  .color-container > * {
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+  }
+
+  .notes-container {
+    height: auto;
+    padding: 10px;
+  }
+
+  .inside-div {
+    width: 200px;
+    height: 200px;
+  }
+
+  .tool-bar i {
+    font-size: 14px;
+  }
+
+  .label {
+    width: 60px;
+    height: 30px;
+  }
+
+  .circle {
+    width: 24px;
+    height: 24px;
   }
 }
+
+
+
+
+
+
+
+
