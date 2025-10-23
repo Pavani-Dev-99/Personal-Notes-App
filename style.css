@@ -192,14 +192,14 @@ body {
 }
 
 /* =================== Body =================== */
-body {
+/* body {
   margin: 0;
   display: flex;
   justify-content: center;
   height: 100vh;
   align-items: center;
   transition: 0.4s;
-}
+} */
 
 /* =================== Dark Mode Switch =================== */
 .input {
@@ -462,6 +462,7 @@ body {
     height: 300px;
   }
 }
+
 
 
 
