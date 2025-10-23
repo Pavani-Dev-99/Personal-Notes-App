@@ -2,25 +2,18 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      java: corretto17
     commands:
-      - echo "Verifying Java and Maven"
-      - java -version
-      - mvn --version
-      - echo "Install dependencies if any (skip if none)"
+      - echo "No dependencies to install for static web app"
 
   build:
     commands:
-      - echo "Building Personal Notes App JAR"
-      - mvn clean package -DskipTests
+      - echo "No build step required for HTML/CSS/JS"
 
   post_build:
     commands:
-      - echo "Build completed successfully on `date`"
+      - echo "Build phase completed successfully on `date`"
 
 artifacts:
   files:
-    - target/*.jar
-  discard-paths: yes
-
+    - '**/*'
+  discard-paths: no
