@@ -40,7 +40,7 @@ body {
 /* =================== Container =================== */
 .container {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   /* flex-wrap: wrap; */
@@ -118,7 +118,7 @@ body {
 /* =================== Color Palette =================== */
 .color-container {
   height: 50px;
-  background-color: rgb(32, 32, 33);
+  background-color: rgb(61, 61, 64);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -462,6 +462,7 @@ body {
     height: 300px;
   }
 }
+
 
 
 
